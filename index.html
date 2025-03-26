@@ -1,46 +1,26 @@
-<html>
+<html   >
     <head>
-       <link rel="stylesheet" href="index.css">
+        <title>Basketball Scoreboard</title>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div class="container">
-            <h1>Shlok Cafe</h1>
-            <p>The Best Burgers And Pizzas In Town</p>
-            
-            <div>
-                <h2>Pizza</h2>
-                <p>Pepperoni, mushroom, mozzarella</p>
-                <p>$14</p>
-                <button id="Btn1"> + </button>
-                <button id="RemovePizza"> - </button>
-            </div>
-            
-            <div>
-                <h2>Burger</h2>
-                <p>Beef, cheese, lettuce</p>
-                <p>$12</p>
-                <button id="Btn2"> + </button>
-                <button id="RemoveBurger"> - </button>
-            </div>
-            
-            <div>
-                <h2>Beer</h2>
-                <p>Grain, hops, yeast, water</p>
-                <p>$14</p>
-                <button id="Btn3"> + </button>
-                <button id="RemoveBeer"> - </button>
-            </div>
-            
-            <div>
-                <h2>Your Order</h2>
-                <h3 id="order"></h3>
-            </div>
-            <div>
-                <button id="Btn4">Place Order</button>
-                <h2 id="thankyou"></h2>
-            </div>
+        <h1>Scoreboard</h1>
+        <div>
+            <h2>Team 1</h2>
+            <p id="team1-score">0</p>
+            <button onclick="add1ToTeam1()"> +1</button>
+            <button onclick="add2ToTeam1()"> +2</button>
+            <button onclick="add3ToTeam1()"> +3</button>
         </div>
-
-        <script src="index.js"></script>
+        <div>
+            <h2>Team 2</h2>
+            <p id="team2-score">0</p>
+            <button onclick="add1ToTeam2()"> +1</button>
+            <button onclick="add2ToTeam2()"> +2</button>
+            <button onclick="add3ToTeam2()"> +3</button>
+        </div>  
+        <button onclick="resetScore()">Reset</button>
+        <script src="index.js">
+        </script>
     </body>
 </html>

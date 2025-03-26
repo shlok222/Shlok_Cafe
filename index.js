@@ -1,87 +1,43 @@
-let order = [];
-const pizzaBtn = document.getElementById("Btn1");
-const burgerBtn = document.getElementById("Btn2");
-const beerBtn = document.getElementById("Btn3");
-const placeOrder = document.getElementById("Btn4");
+let team1Score = document.getElementById("team1-score");
+let team2Score = document.getElementById("team2-score");
+
+let team1ScoreValue = 0;
+let team2ScoreValue = 0;
 
 
-const removePizzaBtn = document.getElementById("RemovePizza");
-const removeBurgerBtn = document.getElementById("RemoveBurger");
-const removeBeerBtn = document.getElementById("RemoveBeer");
-
-const finalOrder = document.getElementById("order");
-const thankYou = document.getElementById("thankyou")
-
-let pizzaCount = 0;
-let burgerCount = 0;
-let beerCount = 0;
-
-const pizzaPrice = 14;
-const burgerPrice = 12;
-const beerPrice = 14;
-
-// Function to update the order display
-function updateOrder() {
-    let orderSummary = "";
-    let totalCost = (pizzaCount * pizzaPrice) + (burgerCount * burgerPrice) + (beerCount * beerPrice);
-    
-    if (pizzaCount > 0) {
-        orderSummary += `🍕 Pizza: ${pizzaCount} / Total Cost = $${pizzaCount * pizzaPrice}<br>`;
-    }
-    if (burgerCount > 0) {
-        orderSummary += `🍔 Burger: ${burgerCount} / Total Cost = $${burgerCount * burgerPrice}<br>`;
-    }
-    if (beerCount > 0) {
-        orderSummary += `🍺 Beer: ${beerCount} / Total Cost = $${beerCount * beerPrice}<br>`;
-    }
-
-    if (totalCost > 0) {
-        orderSummary += `<hr><strong>🛒 Final Total Cost: $${totalCost}</strong>`;
-    } else {
-        orderSummary = "Your cart is empty.";
-    }
-
-    finalOrder.innerHTML = orderSummary;
+function add1ToTeam1() {
+    team1ScoreValue += 1;
+    team1Score.textContent = team1ScoreValue;    
 }
 
-// Add event listeners to add items
-pizzaBtn.addEventListener("click", function () {
-    pizzaCount += 1;
-    updateOrder();
-});
+function add2ToTeam1() {
+    team1ScoreValue += 2;
+    team1Score.textContent = team1ScoreValue;
+}
 
-burgerBtn.addEventListener("click", function () {
-    burgerCount += 1;
-    updateOrder();
-});
+function add3ToTeam1() {
+    team1ScoreValue += 3;
+    team1Score.textContent = team1ScoreValue;
+}
 
-beerBtn.addEventListener("click", function () {
-    beerCount += 1;
-    updateOrder();
-});
+function add1ToTeam2() {
+    team2ScoreValue += 1;
+    team2Score.textContent = team2ScoreValue;
+}
 
-// Add event listeners to remove items
-removePizzaBtn.addEventListener("click", function () {
-    if (pizzaCount > 0) {
-        pizzaCount -= 1;
-    }
-    updateOrder();
-});
+function add2ToTeam2() {
+    team2ScoreValue += 2;
+    team2Score.textContent = team2ScoreValue;
+}   
 
-removeBurgerBtn.addEventListener("click", function () {
-    if (burgerCount > 0) {
-        burgerCount -= 1;
-    }
-    updateOrder();
-});
+function add3ToTeam2() {
+    team2ScoreValue += 3;
+    team2Score.textContent = team2ScoreValue;
+}
 
-removeBeerBtn.addEventListener("click", function () {
-    if (beerCount > 0) {
-        beerCount -= 1;
-    }
-    updateOrder();
-});
-
-placeOrder.addEventListener("click", function() {
-    thankYou.textContent = `Your order has been placed ✅`
-})
+function resetScore() {
+    team1ScoreValue = 0;
+    team2ScoreValue = 0;
+    team1Score.textContent = 0;
+    team2Score.textContent = 0;
+}
